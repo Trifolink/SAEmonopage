@@ -27,6 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => {
         loader.style.display = "none";
-    }, 2000);
+    }, 500);
 });
 
