@@ -4,8 +4,8 @@ body {
 }
 
 header {
-    /* background-color: #1c1c1c;  */
-    /* color: #fff;  */
+    background-color: #242628; 
+    color: #fff; 
     padding: 10px 20px;
 }
 
@@ -19,7 +19,7 @@ header {
     display: flex;
     align-items: center;
     gap: 10px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 
 .imgheader {
@@ -35,7 +35,7 @@ header {
 
 .menu a {
     text-decoration: none; 
-    color: #000; 
+    color: #fff; 
     font-size: 16px;
     margin: 0 15px; 
     transition: color 0.3s; 
@@ -43,6 +43,10 @@ header {
 
 .menu a:hover {
     color: #f39c12; 
+}
+
+.Logo {
+    min-width: 60px;
 }
 
 /* @media (max-width: 768px) {
@@ -58,3 +62,11 @@ header {
         gap: 10px;
     }
 } */
+
+
+.titre {
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 200px;
+    font-size: 100px;
+}
