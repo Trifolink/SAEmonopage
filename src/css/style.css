@@ -70,3 +70,25 @@ header {
     margin-top: 200px;
     font-size: 100px;
 }
+
+
+.loader {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .wheel {
+    font-size: 100px;
+    width: 100px;
+    height: 100px;
+    border-radius: 6em;
+    text-align: center;
+    animation: rolling 1s linear infinite;
+  }
+  
+  @keyframes rolling {
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+  
