@@ -21,3 +21,15 @@ ScrollReveal().reveal('.titre', {
     // }
 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const loader = document.getElementById("loader");
+    const content = document.getElementById("content");
+
+    // Simuler un chargement avec un délai (par exemple, 2s pour le test)
+    setTimeout(() => {
+        loader.style.display = "none"; // Cacher le loader
+        content.style.display = "block"; // Afficher le contenu
+    }, 2000); // Ajustez selon vos besoins
+});
+
