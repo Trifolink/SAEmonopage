@@ -7,6 +7,7 @@ header {
     background-color: #242628; 
     color: #fff; 
     padding: 10px 20px;
+    margin-bottom: 800px;
 }
 
 .nav {
@@ -258,3 +259,44 @@ header {
       transform: translateY(0px);
     }
   }
+
+
+/* Bas de page */
+
+.vinyle-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: center;
+    z-index: 1000; /* Au-dessus des autres éléments */
+}
+
+.vinyle {
+    width: 100%;
+    height: auto;
+    animation: rotate 3s linear infinite; /* Animation de rotation */
+}
+
+.stats {
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    z-index: 10;
+    pointer-events: none; /* Éviter que le texte interfère avec les clics */
+}
+
+/* Animation pour le vinyle */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
