@@ -164,9 +164,6 @@ header {
 }
 
 .cardarriere {
-    background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-    url('../img/hybrid\ theory.jpg');
     background-size: cover;
     background-position: center; 
     transform: rotateY(180deg);
@@ -175,6 +172,77 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.fond1 {
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url('../img/From\ Zero.png');
+}
+.fond2 {
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url('../img/Papercuts.png');
+}
+.fond3 {
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url('../img/Lost\ demos.png');
+}
+.fond4 {
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url('../img/Meteora\ \(20th\ Anniversary\ Edition\).png');
+}
+.fond5 {
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url('../img/Hybrid\ Theory\ \(20th\ Anniversary\ Edition\).png');
+}
+.fond6 {
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url('../img');
+}
+.fond7 {
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url('../img');
+}
+.fond8 {
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url('../img');
+}
+.fond9 {
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url('../img');
+}
+.fond10 {
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url('../img');
+}
+.fond11 {
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url('../img');
+}
+.fond12 {
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url('../img');
+}
+.fond13 {
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url('../img/Reanimation.png');
+}
+.fond14 {
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url('../img/hybrid\ theory.jpg');
 }
 
 .cardarriere-content {
