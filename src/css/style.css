@@ -186,9 +186,18 @@ header {
 .cardarriere-content div {
     display: flex;
     margin-left: 10px;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     color: white;
+    /* margin: 0 5%; */
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr;
 }
+
+.cardarriere-content div > p:nth-of-type(2) {
+    text-align: left;
+}
+
 
 .cardarriere-content {
     overflow-y: scroll;
