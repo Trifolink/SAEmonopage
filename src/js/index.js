@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 500);
 });
 
+
 // Bas de page
 // Liste des statistiques à afficher
 const stats = [
