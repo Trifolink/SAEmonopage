@@ -9,7 +9,6 @@ header {
     background-color: #242628; 
     color: #fff; 
     padding: 10px 20px;
-    /* margin-bottom: 800px; */
 }
 
 .nav {
@@ -97,33 +96,24 @@ header {
     to {
       transform: rotate(360deg);
     }
-  }
+}
 
 
-/* card 2  */
+/* Les cartes */
 .gridcard2 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(5, 1fr);
     grid-gap: 10rem;
     margin: 0 100px;
-    /* padding: 0; */
     justify-content: center; 
     align-items: center; 
-    /* overflow: auto; */
     min-height: auto;
     padding: 100px 0;
 }
 
-/* .card2, .cardcontent {
-    border: 1px solid red; 
-} */
-
-
 .card2 {
-    perspective: 1000px; /* Ajoute une perspective 3D */
-    /* width: 100%;  */
-    /* height: 100%; */
+    perspective: 1000px;
 }
 
 .cardcontent {
@@ -136,20 +126,19 @@ header {
 }
 
 .card2:hover .cardcontent {
-    transform: rotateY(180deg); /* Fait pivoter la carte */
+    transform: rotateY(180deg);
 }
 
 .cardavant, .cardarriere {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Cache la face arrière lorsqu'elle n'est pas visible */
+    backface-visibility: hidden;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* padding: 20px; */
     text-align: center;
 }
 
@@ -175,25 +164,23 @@ header {
 }
 
 .cardarriere {
-    /* background-color: aqua; */
     background-image: 
     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
     url('../img/hybrid\ theory.jpg');
-    background-size: cover;  /* Pour couvrir l'élément avec l'image */
+    background-size: cover;
     background-position: center; 
     transform: rotateY(180deg);
-    overflow: hidden; /* Évite que le contenu dépasse */
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* padding: 20px; */
 }
 
 .cardarriere-content {
     max-height: 100%;
-    overflow-y: auto; /* Ajoute un défilement vertical si nécessaire */
-    width: 100%; /* Pour s'assurer que le contenu occupe tout l'espace */
+    overflow-y: auto;
+    width: 100%;
 }
 
 .cardarriere-content div {
@@ -203,38 +190,32 @@ header {
     color: white;
 }
 
-
-/* Personnalisation de la zone de contenu avec barre de défilement */
 .cardarriere-content {
-    overflow-y: scroll; /* Active la barre de défilement verticale */
-    margin-top: 40px; /* Espace en haut */
-    margin-bottom: 40px; /* Espace en bas */
-    padding-right: 20px; /* Espace à droite pour la barre de défilement */
-    margin-right: 20px; /* Décale la barre de défilement du bord droit */
-    box-sizing: border-box; /* Permet d'inclure le padding dans les dimensions */
+    overflow-y: scroll;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-right: 20px;
+    margin-right: 20px;
+    box-sizing: border-box;
 }
 
-/* Personnalisation de la barre de défilement */
 .cardarriere-content::-webkit-scrollbar {
-    width: 12px; /* Largeur de la barre de défilement */
+    width: 12px;
 }
 
-/* Couleur et style de la piste (arrière-plan de la barre de défilement) */
 .cardarriere-content::-webkit-scrollbar-track {
-    background: #ffffff; /* Couleur de la piste */
-    border-radius: 200px; /* Coins arrondis de la piste */
+    background: #ffffff;
+    border-radius: 200px;
 }
 
-/* Couleur et style de la poignée (partie déplaçable) */
 .cardarriere-content::-webkit-scrollbar-thumb {
-    background: #d830b7; /* Couleur de la poignée */
-    border-radius: 200px; /* Coins arrondis de la poignée */
-    border: 3px solid #ffffff; /* Espace visuel autour de la poignée */
+    background: #d830b7;
+    border-radius: 200px;
+    border: 3px solid #ffffff;
 }
 
-/* Effet au survol de la poignée */
 .cardarriere-content::-webkit-scrollbar-thumb:hover {
-    background: #d830b7; /* Couleur plus foncée au survol */
+    background: #d830b7;
 }
 
 
@@ -289,4 +270,3 @@ header {
     background: #666;
 }
 
-/* ptit bug ? */
