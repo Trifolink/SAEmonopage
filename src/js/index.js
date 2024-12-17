@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener('scroll', () => {
     const vinyleSection = document.getElementById('vinyle-section');
     const vinyle = document.querySelector('.vinyle');
+    const features = document.querySelectorAll('.feature');
 
     const rect = vinyleSection.getBoundingClientRect();
 
@@ -45,6 +46,20 @@ document.addEventListener('scroll', () => {
         const scrollPosition = window.scrollY - vinyleSection.offsetTop;
         const rotation = scrollPosition * 0.5; // Ajuster le facteur pour la vitesse de rotation
         vinyle.style.transform = `rotate(${rotation}deg)`;
+
+        // Synchronise les caractéristiques avec le défilement
+        features.forEach((feature, index) => {
+            const offset = index * 100; // Décalage entre chaque caractéristique
+            const featurePosition = scrollPosition - offset;
+
+            if (featurePosition > 0 && featurePosition < 200) {
+                feature.style.opacity = 1;
+                feature.style.transform = 'translateY(0)';
+            } else {
+                feature.style.opacity = 0;
+                feature.style.transform = 'translateY(50px)';
+            }
+        });
     } else {
         vinyle.style.transform = 'rotate(0deg)'; // Réinitialise la rotation
     }
