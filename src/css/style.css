@@ -100,19 +100,9 @@ header {
   }
 
 
+/* Carte pour albulm */
 
-
-/* .section1 {
-    background-color: #242628;
-} */
-
-
-
-
-
-
-/* card 2  */
-.gridcard2 {
+.gridcard {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10%;
@@ -186,41 +176,16 @@ header {
 
 .cardarriere-content div {
     display: flex;
-    margin-left: 10px;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
 }
 
-
-/* Personnalisation de la zone de contenu avec barre de défilement */
-.cardarriere-content {
-    overflow-y: scroll; /* Active la barre de défilement verticale */
-    margin-top: 40px; /* Espace en haut */
-    margin-bottom: 40px; /* Espace en bas */
-    padding-right: 20px; /* Espace à droite pour la barre de défilement */
-    margin-right: 20px; /* Décale la barre de défilement du bord droit */
-    box-sizing: border-box; /* Permet d'inclure le padding dans les dimensions */
+.section:nth-child(odd) {
+    background: #444;
 }
 
-/* Personnalisation de la barre de défilement */
-.cardarriere-content::-webkit-scrollbar {
-    width: 12px; /* Largeur de la barre de défilement */
+.section:nth-child(even) {
+    background: #666;
 }
-
-/* Couleur et style de la piste (arrière-plan de la barre de défilement) */
-.cardarriere-content::-webkit-scrollbar-track {
-    background: #000; /* Couleur de la piste */
-    border-radius: 200px; /* Coins arrondis de la piste */
-}
-
-/* Couleur et style de la poignée (partie déplaçable) */
-.cardarriere-content::-webkit-scrollbar-thumb {
-    background: #f39c12; /* Couleur de la poignée */
-    border-radius: 200px; /* Coins arrondis de la poignée */
-    border: 3px solid #000; /* Espace visuel autour de la poignée */
-}
-
-/* Effet au survol de la poignée */
-.cardarriere-content::-webkit-scrollbar-thumb:hover {
-    background: #d35400; /* Couleur plus foncée au survol */
-}
-
