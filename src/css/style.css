@@ -128,8 +128,8 @@ header {
 
 .cardcontent {
     position: relative;
-    width: 100%;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     transform-style: preserve-3d;
     transform-origin: center;
     transition: transform 0.6s ease-in-out;
@@ -158,11 +158,29 @@ header {
 }
 
 .cardavant img {
-    max-width: 50%;
+    max-width: 100%;
+    border-radius: 20px;
+}
+
+.titreablbum {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+}
+
+.titreablbum h1 {
+    color: white;
 }
 
 .cardarriere {
-    background-color: aqua;
+    /* background-color: aqua; */
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url('../img/hybrid\ theory.jpg');
+    background-size: cover;  /* Pour couvrir l'élément avec l'image */
+    background-position: center; 
     transform: rotateY(180deg);
     overflow: hidden; /* Évite que le contenu dépasse */
     display: flex;
@@ -182,6 +200,7 @@ header {
     display: flex;
     margin-left: 10px;
     justify-content: space-around;
+    color: white;
 }
 
 
@@ -202,20 +221,20 @@ header {
 
 /* Couleur et style de la piste (arrière-plan de la barre de défilement) */
 .cardarriere-content::-webkit-scrollbar-track {
-    background: #000; /* Couleur de la piste */
+    background: #ffffff; /* Couleur de la piste */
     border-radius: 200px; /* Coins arrondis de la piste */
 }
 
 /* Couleur et style de la poignée (partie déplaçable) */
 .cardarriere-content::-webkit-scrollbar-thumb {
-    background: #f39c12; /* Couleur de la poignée */
+    background: #d830b7; /* Couleur de la poignée */
     border-radius: 200px; /* Coins arrondis de la poignée */
-    border: 3px solid #000; /* Espace visuel autour de la poignée */
+    border: 3px solid #ffffff; /* Espace visuel autour de la poignée */
 }
 
 /* Effet au survol de la poignée */
 .cardarriere-content::-webkit-scrollbar-thumb:hover {
-    background: #d35400; /* Couleur plus foncée au survol */
+    background: #d830b7; /* Couleur plus foncée au survol */
 }
 
 
