@@ -247,3 +247,5 @@ header {
 .section:nth-child(even) {
     background: #666;
 }
+
+/* ptit bug ? */
