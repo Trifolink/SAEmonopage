@@ -313,7 +313,7 @@ header {
     position: relative;
     height: 100vh;
     overflow: hidden;
-    background: linear-gradient(to bottom, #222, #555);
+    background: linear-gradient(to bottom, #242628, #d830b7);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -335,8 +335,29 @@ header {
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
 }
 
-/* Autres sections pour tester le défilement */
-.section {
+/* Caractéristiques défilantes */
+.features {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /* transform: translateY(10%); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    pointer-events: none;
+}
+
+.feature {
+    font-size: 1.5rem;
+    color: white;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* .section {
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -351,7 +372,8 @@ header {
 
 .section:nth-child(even) {
     background: #666;
-}
+} */
+
 
 /* membres */
 
