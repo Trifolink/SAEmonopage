@@ -104,10 +104,15 @@ header {
 .gridcard2 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10%;
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 10rem;
     margin: 0 100px;
-    justify-content: center; /* Centrer horizontalement */
+    /* padding: 0; */
+    justify-content: center; 
     align-items: center; 
+    /* overflow: auto; */
+    min-height: auto;
+    padding: 100px 0;
 }
 
 /* .card2, .cardcontent {
