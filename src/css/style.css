@@ -238,8 +238,14 @@ header {
 }
 
 
-.section1 {
-    background-color: #242628;
+.albums {
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+    url('../img/fond2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
 }
 
 
