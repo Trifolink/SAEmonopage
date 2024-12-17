@@ -34,27 +34,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Bas de page
 // Liste des statistiques à afficher
-const stats = [
-    "Statistique 1",
-    "Statistique 2",
-    "Statistique 3",
-    "Statistique 4",
-];
+document.addEventListener('scroll', () => {
+    const vinyleSection = document.getElementById('vinyle-section');
+    const vinyle = document.querySelector('.vinyle');
 
-const statsElement = document.querySelector('.stats');
+    const rect = vinyleSection.getBoundingClientRect();
 
-let lastScroll = 0; // Pour suivre la position du scroll
-
-window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-
-    // Calcule quelle statistique afficher en fonction du scroll
-    const index = Math.floor(scrollTop / 200) % stats.length;
-
-    // Change le contenu si nécessaire
-    if (index !== lastScroll) {
-        statsElement.textContent = stats[index];
-        lastScroll = index;
+    // Vérifie si la section est visible
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+        const scrollPosition = window.scrollY - vinyleSection.offsetTop;
+        const rotation = scrollPosition * 0.5; // Ajuster le facteur pour la vitesse de rotation
+        vinyle.style.transform = `rotate(${rotation}deg)`;
+    } else {
+        vinyle.style.transform = 'rotate(0deg)'; // Réinitialise la rotation
     }
 });
 

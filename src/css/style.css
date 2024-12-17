@@ -65,12 +65,12 @@ header {
 
 .head{
     position: relative;
-    background-image: url('../img/for-zero-bg.jpg'); /* Chemin de l'image */
-    background-size: cover; /* Ajuste l'image pour remplir tout l'écran */
-    background-position: center; /* Centre l'image */
-    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-image: url('../img/for-zero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     background-attachment:fixed;
-    height: 800px; /* Hauteur totale de l'écran */
+    height: 800px;
 }
 
 
@@ -204,40 +204,46 @@ header {
 
 /* Bas de page */
 
-.vinyle-container {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 200px;
-    height: 200px;
+#vinyle-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #222, #555);
     display: flex;
     justify-content: center;
     align-items: center;
-    transform-origin: center;
-    z-index: 1000; /* Au-dessus des autres éléments */
+}
+
+.vinyle-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .vinyle {
     width: 100%;
     height: auto;
-    animation: rotate 3s linear infinite; /* Animation de rotation */
+    border-radius: 50%;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
 }
 
-.stats {
-    position: absolute;
+/* Autres sections pour tester le défilement */
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
     color: white;
-    font-size: 14px;
-    text-align: center;
-    z-index: 10;
-    pointer-events: none; /* Éviter que le texte interfère avec les clics */
 }
 
-/* Animation pour le vinyle */
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.section:nth-child(odd) {
+    background: #444;
+}
+
+.section:nth-child(even) {
+    background: #666;
 }
