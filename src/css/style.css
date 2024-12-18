@@ -324,7 +324,7 @@ header {
     position: relative;
     height: 100vh;
     overflow: hidden;
-    background: linear-gradient(to bottom, #242628, #d830b7);
+    /* background: linear-gradient(to bottom, #242628, #d830b7); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -554,3 +554,24 @@ header {
 
 
 } 
+
+
+/* 
+.vinyle-container {
+    position: relative;
+    height: 100vh; 
+    overflow: hidden;
+} */
+
+.background-video-vynile {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajuste la vidéo pour couvrir tout l'espace */
+    z-index: -1; /* Met la vidéo en arrière-plan */
+}
+
+
