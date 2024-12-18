@@ -306,6 +306,17 @@ header {
     background-attachment:fixed;
 }
 
+.albums h1 {
+    text-align: center;
+    font-size: 300%;
+    text-transform: uppercase;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0;
+    
+}
+
 
 /* Bas de page */
 
