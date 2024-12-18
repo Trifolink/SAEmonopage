@@ -32,42 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// Bas de page
-// Liste des statistiques à afficher
-document.addEventListener('scroll', () => {
-    const vinyleSection = document.getElementById('vinyle-section');
-    const vinyle = document.querySelector('.vinyle');
-    const features = document.querySelectorAll('.feature');
-
-    const rect = vinyleSection.getBoundingClientRect();
-
-    // Vérifie si la section est visible
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-        const scrollPosition = window.scrollY - vinyleSection.offsetTop;
-        const rotation = scrollPosition * 0.5; // Ajuster le facteur pour la vitesse de rotation
-        vinyle.style.transform = `rotate(${rotation}deg)`;
-
-        // Synchronise les caractéristiques avec le défilement
-        features.forEach((feature, index) => {
-            const offset = index * 100; // Décalage entre chaque caractéristique
-            const featurePosition = scrollPosition - offset;
-
-            if (featurePosition > 0 && featurePosition < 200) {
-                feature.style.opacity = 1;
-                feature.style.transform = 'translateY(0)';
-            } else {
-                feature.style.opacity = 0;
-                feature.style.transform = 'translateY(50px)';
-            }
-        });
-    } else {
-        vinyle.style.transform = 'rotate(0deg)'; // Réinitialise la rotation
-    }
-});
-
-
-
-
 // histoire
 
 const video = document.querySelector(".background-video");
@@ -133,4 +97,52 @@ window.addEventListener("wheel", handleScroll, { passive: false });
 // Ajuste la section si la fenêtre est redimensionnée
 window.addEventListener("resize", () => {
     sectionHeight = section.offsetHeight;
+});
+
+
+
+// vinyle 
+// Sélectionne l'image du vinyle
+const vinyle = document.querySelector('.vinyle');
+
+let rotation = 0; // Variable pour suivre la rotation
+let isHovering = false; // Flag pour détecter le hover
+
+// Fonction pour désactiver le scroll global tout en laissant le vinyle réagir
+function disableScroll() {
+    window.addEventListener('wheel', preventScroll, { passive: false });
+    window.addEventListener('keydown', preventScrollKeys, { passive: false });
+}
+
+// Fonction pour réactiver le scroll global
+function enableScroll() {
+    window.removeEventListener('wheel', preventScroll);
+    window.removeEventListener('keydown', preventScrollKeys);
+}
+
+// Empêche le comportement de scroll global
+function preventScroll(event) {
+    if (!isHovering) return; // Si on ne survole pas l'image, on laisse le scroll normal
+    event.preventDefault(); // Bloque le scroll de la page
+    rotation += event.deltaY > 0 ? 10 : -10; // Ajuste la rotation selon la direction du scroll
+    vinyle.style.transform = `rotate(${rotation}deg)`; // Applique la rotation
+}
+
+// Empêche le scroll via les touches clavier (flèches, espace, etc.)
+function preventScrollKeys(event) {
+    const keys = [32, 33, 34, 35, 36, 37, 38, 39, 40]; // Codes des touches de défilement
+    if (!isHovering || !keys.includes(event.keyCode)) return; // Bloque uniquement si le hover est actif
+    event.preventDefault();
+}
+
+// Activer l'effet de hover et désactiver le scroll global
+vinyle.addEventListener('mouseenter', () => {
+    isHovering = true;
+    disableScroll(); // Désactiver le scroll global
+});
+
+// Désactiver l'effet de hover et réactiver le scroll global
+vinyle.addEventListener('mouseleave', () => {
+    isHovering = false;
+    enableScroll(); // Réactiver le scroll global
 });
