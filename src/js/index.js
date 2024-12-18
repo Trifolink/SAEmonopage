@@ -77,54 +77,58 @@ let sectionHeight = 100; // Hauteur logique de la section (100% pour la vidéo)
 let isLocked = false; // Si la section bloque le scroll
 let videoEnded = false; // Si la vidéo est terminée
 
+// Fonction pour vérifier si la section est centrée dans la fenêtre
 const isSectionCentered = () => {
     const sectionTop = section.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
 
-    // Vérifie si la section est bien centrée dans la fenêtre
+    // Vérifie si la section qui contient la vidéo est centrée dans la fenêtre
     return sectionTop >= -0.2 * windowHeight && sectionTop <= 0.2 * windowHeight;
 };
 
+// Fonction pour gérer le scroll
 const handleScroll = (event) => {
-    const delta = Math.sign(event.deltaY); // Détecte haut/bas (-1 ou +1)
+    const delta = Math.sign(event.deltaY); // Détecte le sens du scroll (haut ou bas)
 
-    // Si la section est centrée ou si la vidéo n'est pas terminée
+    // Bloquer le scroll si la section est centrée ou si la vidéo est en cours
     if (isSectionCentered() || isLocked) {
         if (!isLocked) {
-            document.body.style.overflow = "hidden"; // Bloque le scroll natif
+            document.body.style.overflow = "hidden"; // Empêche le scroll pendant la lecture
             isLocked = true;
         }
 
-        // Mise à jour de la progression
-        fakeScroll += delta * 2; // Ajuste la vitesse (2 est ajustable)
+        // Mise à jour de la progression de la vidéo en fonction du scroll
+        fakeScroll += delta * 2; // Ajuste la vitesse du scroll (2 est un facteur ajustable)
         fakeScroll = Math.min(Math.max(fakeScroll, 0), sectionHeight); // Limite à 0-100%
 
-        const progress = fakeScroll / sectionHeight; // Convertit en %
+        const progress = fakeScroll / sectionHeight; // Convertit la position simulée en pourcentage
+
         if (!isNaN(video.duration)) {
-            video.currentTime = progress * video.duration; // Synchronise avec le scroll
+            video.currentTime = progress * video.duration; // Synchronise la vidéo avec le scroll
         }
 
-        // Libérer le scroll après la vidéo
+        // Si la vidéo est terminée, on la bloque sur la dernière frame
         if (fakeScroll === sectionHeight) {
             videoEnded = true;
+            video.currentTime = video.duration; // Figer la vidéo sur la dernière frame
             isLocked = false;
-            document.body.style.overflow = "visible";
+            document.body.style.overflow = "visible"; // Permettre le scroll normal de la page
         }
 
-        // Rebloquer si on revient en arrière
-        if (fakeScroll === 0) {
+        // Si l'utilisateur scroll vers le haut et que la vidéo est revenue au début
+        if (fakeScroll === 0 && delta < 0) {
             videoEnded = false;
-            isLocked = true;
-            document.body.style.overflow = "hidden";
+            isLocked = false;
+            document.body.style.overflow = "visible"; // Permettre le scroll normal de la page
         }
     } else {
-        // Autorise le scroll natif si hors de la section
+        // Autoriser le scroll natif lorsque la section n'est pas centrée dans la fenêtre
         document.body.style.overflow = "visible";
         isLocked = false;
     }
 };
 
-// Écoute le scroll
+// Écouteur pour le scroll
 window.addEventListener("wheel", handleScroll, { passive: false });
 
 // Ajuste la section si la fenêtre est redimensionnée
