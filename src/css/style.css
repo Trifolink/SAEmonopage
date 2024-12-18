@@ -577,22 +577,25 @@ body {
 }
 .histoire {
     position: relative;
-    height: 100vh; /* Section pleine hauteur */
+    height: 230vh; /* Section pleine hauteur */
     display: flex;
     align-items: center; /* Centre verticalement */
     justify-content: center; /* Centre horizontalement */
     overflow: hidden; /* Masque le scroll interne */
     background-color: #242628;
+    z-index: -1; /* Place la vidéo derrière le contenu */
+    
+
 }
 
 .background-video {
-    position: absolute;
-    top: 0;
-    left: 50%; /* Positionne la vidéo au centre horizontalement */
-    transform: translateX(-50%); /* Ajuste la vidéo pour la centrer */
-    width: auto; /* Garde la largeur de la vidéo intacte */
+    position: fixed; /* Fixe la vidéo par rapport à la fenêtre de visualisation */
+    top: 50%; /* Centrer verticalement */
+    left: 50%; /* Centrer horizontalement */
+    transform: translate(-50%, -50%); /* Centrer la vidéo parfaitement */
+    width: auto; /* Garde la largeur originale de la vidéo */
     max-width: 100%; /* Empêche la vidéo de dépasser la largeur du parent */
     height: 100%; /* Remplie la hauteur de la section */
-    object-fit: contain; /* Garde le ratio de la vidéo tout en s'assurant qu'elle est contenue dans la section */
-    z-index: 1; /* Place la vidéo derrière le contenu */
+    object-fit: contain; /* Garde le ratio de la vidéo */
+    z-index: -2; /* Place la vidéo derrière le contenu */
 }
