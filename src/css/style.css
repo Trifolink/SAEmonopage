@@ -493,7 +493,23 @@ header {
 } */
 
 
+.membrearriere {
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Assurez-vous que la largeur correspond à celle du conteneur */
+    height: 100%; /* Même chose pour la hauteur */
+}
 
+.membrearriere video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover; /* Recouvre tout le conteneur sans déformation */
+}
 
 .membrearriere {
     background-size: cover;
@@ -502,17 +518,19 @@ header {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    /* justify-content: center; */
+
 }
 
+.membrearriere-content {
+    position: relative; /* Pour afficher du contenu au-dessus de la vidéo */
+    z-index: 1; /* Positionne le contenu au-dessus de la vidéo */
+}
 
-
+/* 
 .fond1-1 {
     background-image: 
-    /* linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),  */
     url('../img/membres/brad.png');
-}
+} */
 
 .membrecontent {
     position: relative;
