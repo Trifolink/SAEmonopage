@@ -124,3 +124,6 @@ vinyle.addEventListener('mouseleave', () => {
     isHovering = false;
     enableScroll(); 
 });
+
+
+

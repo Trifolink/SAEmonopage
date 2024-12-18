@@ -249,6 +249,7 @@ header {
     max-height: 100%;
     overflow-y: auto;
     width: 100%;
+    position: relative;
 }
 
 .cardarriere-content div {
@@ -542,3 +543,10 @@ body {
     object-fit: contain;
     z-index: -2;
 }
+
+
+
+.fond1-4 {
+    background-image: 
+    url('../img/membres/dave.png');
+} 
