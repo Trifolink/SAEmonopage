@@ -575,23 +575,24 @@ header {
 body {
     overflow-y: scroll; /* Active le scroll mais sans afficher la barre */
 }
-
 .histoire {
     position: relative;
-    height: 120vh; /* Section pleine hauteur */
+    height: 100vh; /* Section pleine hauteur */
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* Centre verticalement */
+    justify-content: center; /* Centre horizontalement */
     overflow: hidden; /* Masque le scroll interne */
+    background-color: #242628;
 }
 
 .background-video {
     position: absolute;
     top: 0;
-    left: 0;
-    /* width: 100%; */
-    height: 100%;
-    object-fit: cover; /* Assure le recouvrement complet */
-    z-index: -1;
+    left: 50%; /* Positionne la vidéo au centre horizontalement */
+    transform: translateX(-50%); /* Ajuste la vidéo pour la centrer */
+    width: auto; /* Garde la largeur de la vidéo intacte */
+    max-width: 100%; /* Empêche la vidéo de dépasser la largeur du parent */
+    height: 100%; /* Remplie la hauteur de la section */
+    object-fit: contain; /* Garde le ratio de la vidéo tout en s'assurant qu'elle est contenue dans la section */
+    z-index: 1; /* Place la vidéo derrière le contenu */
 }
-
