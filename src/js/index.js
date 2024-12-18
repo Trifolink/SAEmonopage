@@ -102,7 +102,9 @@ const handleScroll = (event) => {
 
         const progress = fakeScroll / sectionHeight; // Convertit en %
         if (!isNaN(video.duration)) {
-            video.currentTime = progress * video.duration; // Synchronise avec le scroll
+            const newTime = progress * video.duration;
+            // Empêche la vidéo de revenir en arrière après avoir atteint la dernière frame
+            video.currentTime = Math.min(newTime, video.duration); // Assure qu'elle ne dépasse pas la durée
         }
 
         // Libérer le scroll si la vidéo est terminée (en bas)
