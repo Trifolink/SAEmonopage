@@ -65,3 +65,69 @@ document.addEventListener('scroll', () => {
     }
 });
 
+
+
+
+// histoire
+
+const video = document.querySelector(".background-video");
+const section = document.querySelector("#histoire");
+let fakeScroll = 0; // Position simulée (en %)
+let sectionHeight = 100; // Hauteur logique de la section (100% pour la vidéo)
+let isLocked = false; // Si la section bloque le scroll
+let videoEnded = false; // Si la vidéo est terminée
+
+const isSectionCentered = () => {
+    const sectionTop = section.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    // Vérifie si la section est bien centrée dans la fenêtre
+    return sectionTop >= -0.2 * windowHeight && sectionTop <= 0.2 * windowHeight;
+};
+
+const handleScroll = (event) => {
+    const delta = Math.sign(event.deltaY); // Détecte haut/bas (-1 ou +1)
+
+    // Si la section est centrée ou si la vidéo n'est pas terminée
+    if (isSectionCentered() || isLocked) {
+        if (!isLocked) {
+            document.body.style.overflow = "hidden"; // Bloque le scroll natif
+            isLocked = true;
+        }
+
+        // Mise à jour de la progression
+        fakeScroll += delta * 2; // Ajuste la vitesse (2 est ajustable)
+        fakeScroll = Math.min(Math.max(fakeScroll, 0), sectionHeight); // Limite à 0-100%
+
+        const progress = fakeScroll / sectionHeight; // Convertit en %
+        if (!isNaN(video.duration)) {
+            video.currentTime = progress * video.duration; // Synchronise avec le scroll
+        }
+
+        // Libérer le scroll après la vidéo
+        if (fakeScroll === sectionHeight) {
+            videoEnded = true;
+            isLocked = false;
+            document.body.style.overflow = "visible";
+        }
+
+        // Rebloquer si on revient en arrière
+        if (fakeScroll === 0) {
+            videoEnded = false;
+            isLocked = true;
+            document.body.style.overflow = "hidden";
+        }
+    } else {
+        // Autorise le scroll natif si hors de la section
+        document.body.style.overflow = "visible";
+        isLocked = false;
+    }
+};
+
+// Écoute le scroll
+window.addEventListener("wheel", handleScroll, { passive: false });
+
+// Ajuste la section si la fenêtre est redimensionnée
+window.addEventListener("resize", () => {
+    sectionHeight = section.offsetHeight;
+});
