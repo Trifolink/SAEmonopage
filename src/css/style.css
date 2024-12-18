@@ -332,8 +332,8 @@ header {
 
 .vinyle-container {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 500px;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -343,8 +343,10 @@ header {
     width: 100%;
     height: auto;
     border-radius: 50%;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0px 100px rgb(57, 60, 63);
+    transition: transform 0.1s linear; /* Rend la rotation fluide */
 }
+
 
 /* Caractéristiques défilantes */
 .features {
@@ -367,6 +369,8 @@ header {
     transform: translateY(50px);
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
+
 
 /* .section {
     height: 100vh;
